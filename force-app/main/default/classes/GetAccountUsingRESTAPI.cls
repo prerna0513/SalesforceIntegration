@@ -1,8 +1,8 @@
 public class GetAccountUsingRESTAPI {
-    private final String clientId = '3MVG9pRzvMkjMb6nVEmKFiGhe5_g44YZlvGlKuWfme6arZbSErAs0pNwnM5XOkgfYmwmQxrdbx.posHdKMuSP';
-    private final String clientSecret = 'F6F5B6BA106638D3DC4AB68ECD1A8D82B8A3495292A65EA7EE00D0398A79C63B';
-    private final String username = 'prerna@ama.com';
-    private final String password = 'testing13$';
+    private final String clientId = 'clientId';
+    private final String clientSecret = 'ClientSecret';
+    private final String username = 'username';
+    private final String password = 'password';
     private final String endpoint='https://amacom-dev-ed.my.salesforce.com/services/oauth2/token';
 
     public class deserializeResponse
