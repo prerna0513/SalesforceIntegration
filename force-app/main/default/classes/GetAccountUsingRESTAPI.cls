@@ -20,13 +20,6 @@ public class GetAccountUsingRESTAPI {
         request.setBody('grant_type=password' + '&client_id='+clientId + 
             '&client_secret='+clientSecret + '&username='+username + '&password='+password);
 
-        /*request.setBody(
-          'grant_type=password' +
-          '&client_id=' + clientId +
-          '&client_secret=' + clientSecret +
-          '&username=' + uname +
-          '&password=' + pwd
-        );*/
         request.setBody(reqbody);
         request.setHeader('Authorization', 'OAuth '+UserInfo.getSessionId()); 
         system.debug('request:::'+request.getbody());
@@ -76,28 +69,7 @@ public class GetAccountUsingRESTAPI {
             system.debug('parser:::'+parser);
             List<accountWrapper> accList=new List<accountWrapper>();
             
-            /*while (parser.nextToken() != null) {
-                if((parser.getCurrentToken() == JSONToken.FIELD_NAME) ) {
-                    Account acc;
-                    if ((parser.getCurrentToken() == JSONToken.FIELD_NAME) && (parser.getText() == 'Id')) {
-                        parser.nextToken();
-                        String sId= parser.getText();
-                        acc=new Account();
-                        acc.Id=sId;
-                        system.debug('Id@@@' + sId);
-                        parser.nextToken();
-                        if ((parser.getCurrentToken() == JSONToken.FIELD_NAME) && (parser.getText() == 'Name')) {
-                            parser.nextToken();
-                            string sName= parser.getText();
-                            acc.Name=sName;
-                            system.debug('Name@@@' + sName );
-                        }
-                    }
-                    accList.add(acc); 
-                }
-                accList.remove(null);
-            }*/
-            //ListAccount.AddAll(accList);
+            
             system.debug('AccountList@@@@'+(List<accountWrapper>) JSON.deserialize(trimmedResponse,List<accountWrapper>.class));
             accDataList = (List<accountWrapper>) JSON.deserialize(trimmedResponse,List<accountWrapper>.class);
         }
